@@ -39,7 +39,7 @@ const LandingPage = () => {
           <p className="text-4xl text-center text-purple-600 font-bold">
             Technical Skills
           </p>
-          <div className="flex flex-wrap justify-center items-center mt-1 p-[10px] md:p-20 space-x-5">
+          <div className="flex flex-wrap justify-center items-center mt-1 p-[10px] md:p-20 space-x-3 md:space-x-12">
             {TechnicalSkills.map((item, index) => (
               <span key={index} className="p-2 md:p-3 my-4 bg-purple-200 rounded-2xl text-purple-700 text-[17px] md:text-xl font-bold shadow-md">
                 {item}
