@@ -101,10 +101,6 @@ const Footer = () => {
                 <Link to="#" className="text-gray-500 hover:text-gray-700 mr-4">
                   Terms of Service
                 </Link>
-                <select className="border border-gray-200 rounded-md px-2 py-1">
-                  <option value="India">India</option>
-                  {/* Add more options as needed */}
-                </select>
               </div>
             </div>
           </div>
