@@ -17,7 +17,7 @@ const Navbar = () => {
     <>
       <div
         ref={menuBlock}
-        className="fixed top-5 right-5 w-14 h-14 shadow-lg z-40 rounded-full"
+        className="fixed top-5 right-5 w-14 h-14 shadow-lg z-40 rounded-full border-green-300"
       >
         {open ? (
           <button
