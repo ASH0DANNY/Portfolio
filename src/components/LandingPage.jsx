@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import profile_image from "../images/profile.jpg";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const TechnicalSkills = [
@@ -15,6 +16,30 @@ const LandingPage = () => {
     "Tailwind CSS",
     "MySQL",
     "PHP",
+  ];
+
+  const projects = [
+    {
+      key: 1,
+      heading: "Heading1",
+      desc: "Project description based on plot",
+      tec_used: ["Java", "MySQL", "AWS", "etc."],
+      project_link: "www.myportfolioo.com",
+    },
+    {
+      key: 2,
+      heading: "Heading2",
+      desc: "Project description based on plot",
+      tec_used: ["React JS", "Node JS", "Express JS", "Mongo DB"],
+      project_link: "www.khata.com",
+    },
+    {
+      key: 3,
+      heading: "Heading3",
+      desc: "Project description based on plot",
+      tec_used: ["Python", "Mongo DB"],
+      project_link: "www.driveaway.com",
+    },
   ];
   return (
     <>
@@ -35,7 +60,7 @@ const LandingPage = () => {
         </div>
       </div>
       <div className="w-full h-auto md:px-10 py-14 md:py-14 flex justify-center items-center">
-        <div className="w-[95%] bg-slate-300 rounded-xl py-5 md:p-14">
+        <div className="w-[95%] bg-purple-100 rounded-xl py-5 md:p-10">
           <p className="text-4xl text-center text-purple-600 font-bold">
             Technical Skills
           </p>
@@ -49,6 +74,30 @@ const LandingPage = () => {
               </span>
             ))}
           </div>
+        </div>
+      </div>
+      <div className="w-full bg-purple-950 px-5 md:px-10 py-10 md:py-14">
+        <p className="text-3xl text-center text-purple-50 font-bold">
+          Projects Developed
+        </p>
+        <div className="mt-7 md:mt-10 w-full flex justify-center items-center gap-8">
+          {projects.map((item) => (
+            <div
+              key={item.key}
+              className="bg-purple-800 hover:bg-purple-700 hover:shadow-lg p-7 rounded-lg"
+            >
+              <p className="text-2xl text-purple-100 font-bold mb-4">
+                {item.heading}
+              </p>
+              <p className="text-lg text-purple-300 mb-3">{item.desc}</p>
+              <p className="text-sm text-purple-400 mb-4">
+                {item.tec_used.map((value) => value + " ")}
+              </p>
+              <p className="text-sm text-blue-400" dir="rtl">
+                <Link to={`//${item.project_link}`}>{item.project_link}</Link>
+              </p>
+            </div>
+          ))}
         </div>
       </div>
       <Footer />
