@@ -94,7 +94,9 @@ const LandingPage = () => {
                 {item.tec_used.map((value) => value + " ")}
               </p>
               <p className="text-sm text-blue-400" dir="rtl">
-                <Link to={`//${item.project_link}`}>{item.project_link}</Link>
+                <Link to={`//${item.project_link}`} target="_blank">
+                  {item.project_link}
+                </Link>
               </p>
             </div>
           ))}
