@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import profile_image from "../images/profile.jpg";
 import { Link } from "react-router-dom";
-import { projects, TechnicalSkills } from "../data/PortfolioData";
+import { contactInfo, projects, TechnicalSkills } from "../data/PortfolioData";
 
 const LandingPage = () => {
   return (
@@ -65,6 +65,47 @@ const LandingPage = () => {
               </p>
             </div>
           ))}
+        </div>
+      </div>
+      <div className="w-full md:flex justify-center items-center my-11 md:my-16 p-3 md:p-12">
+        <div className="flex flex-col flex-wrap gap-3 w-full md:w-1/2 justify-center items-center">
+          {contactInfo.map((item) => (
+            <div
+              key={item.key}
+              className="bg-purple-50 hover:bg-purple-200 shadow-md hover:shadow-lg p-7 rounded-lg"
+            >
+              <p className="text-base text-center font-bold">
+                {item.media_name}
+              </p>
+              <p className="text-sm text-center">{item.meda_data}</p>
+              <p className="text-sm text-center">{item.media_link}</p>
+            </div>
+          ))}
+        </div>
+        <div className="w-full md:w-1/2 flex flex-col flex-wrap gap-3 justify-center items-center shadow-xl p-5">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Your name.."
+            className="border-gray-600 outline-blue-400 p-2 my-3"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Your email.."
+            className="outline-blue-400 p-2 my-3"
+          />
+          <textarea
+            name="comment"
+            id="comment"
+            placeholder="Your comment.."
+            className="outline-blue-400 p-2 my-3"
+          ></textarea>
+          <button className="h-[30px] w-[80px] p-1 bg-purple-900 text-purple-300 rounded-md">
+            SUBMIT
+          </button>
         </div>
       </div>
       <Footer />

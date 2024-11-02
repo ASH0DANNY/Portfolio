@@ -5,6 +5,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
 import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
 import TextsmsRoundedIcon from "@mui/icons-material/TextsmsRounded";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = () => {
         {open ? (
           <button
             ref={navBtn}
-            className="w-full h-full cursor-pointer z-30"
+            className="w-full h-full cursor-pointer z-30 hover:text-white"
             onClick={handleMenuClick}
           >
             <CloseIcon />
@@ -38,7 +39,7 @@ const Navbar = () => {
         ) : (
           <button
             ref={navBtn}
-            className="w-full h-full cursor-pointer z-30"
+            className="w-full h-full cursor-pointer z-30 hover:text-white"
             onClick={handleMenuClick}
           >
             <MenuIcon />
@@ -48,18 +49,18 @@ const Navbar = () => {
         {/* Menu Open Block */}
         {open ? (
           <div className="relative flex flex-col justify-center items-center bg-gray-500 gap-4 mt-2 w-[56px] h-[210px] z-40 bg-opacity-50 rounded-2xl shadow-lg p-4">
-            <div className="mx-auto">
+            <Link to={"#"} className="mx-auto">
               <HomeRoundedIcon />
-            </div>
-            <div className="mx-auto">
+            </Link>
+            <Link to={"#"} className="mx-auto hover:text-white">
               <DataObjectRoundedIcon />
-            </div>
-            <div className="mx-auto">
+            </Link>
+            <Link to={"#"} className="mx-auto hover:text-white">
               <AssignmentRoundedIcon />
-            </div>
-            <div className="mx-auto">
+            </Link>
+            <Link to={"#"} className="mx-auto hover:text-white">
               <TextsmsRoundedIcon />
-            </div>
+            </Link>
           </div>
         ) : null}
       </div>

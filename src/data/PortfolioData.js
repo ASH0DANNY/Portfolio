@@ -43,3 +43,24 @@ export const projects = [
     project_link: "www.driveaway.com",
   },
 ];
+
+export const contactInfo = [
+  {
+    key: 1,
+    media_name: "WhatsApp",
+    meda_data: "+91 927366990",
+    media_link: "www.instagram.com",
+  },
+  {
+    key: 2,
+    media_name: "Email",
+    meda_data: "example@example.com",
+    media_link: "www.instagram.com",
+  },
+  {
+    key: 3,
+    media_name: "Phone",
+    meda_data: "+91 927366990",
+    media_link: "www.instagram.com",
+  },
+];
