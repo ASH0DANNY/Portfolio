@@ -3,44 +3,9 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import profile_image from "../images/profile.jpg";
 import { Link } from "react-router-dom";
+import { projects, TechnicalSkills } from "../data/PortfolioData";
 
 const LandingPage = () => {
-  const TechnicalSkills = [
-    "React JS",
-    "Node JS",
-    "Python",
-    "Java",
-    "C++",
-    "Mongo DB",
-    "Firebase",
-    "Tailwind CSS",
-    "MySQL",
-    "PHP",
-  ];
-
-  const projects = [
-    {
-      key: 1,
-      heading: "Heading1",
-      desc: "Project description based on plot",
-      tec_used: ["Java", "MySQL", "AWS", "etc."],
-      project_link: "www.myportfolioo.com",
-    },
-    {
-      key: 2,
-      heading: "Heading2",
-      desc: "Project description based on plot",
-      tec_used: ["React JS", "Node JS", "Express JS", "Mongo DB"],
-      project_link: "www.khata.com",
-    },
-    {
-      key: 3,
-      heading: "Heading3",
-      desc: "Project description based on plot",
-      tec_used: ["Python", "Mongo DB"],
-      project_link: "www.driveaway.com",
-    },
-  ];
   return (
     <>
       <Navbar />
@@ -80,7 +45,7 @@ const LandingPage = () => {
         <p className="text-3xl text-center text-purple-50 font-bold">
           Projects Developed
         </p>
-        <div className="mt-7 md:mt-10 w-full flex justify-center items-center gap-8">
+        <div className="mt-7 md:mt-10 w-full flex flex-wrap justify-center items-center gap-8">
           {projects.map((item) => (
             <div
               key={item.key}
