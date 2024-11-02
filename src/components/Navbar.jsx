@@ -4,6 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
 import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
+import TextsmsRoundedIcon from "@mui/icons-material/TextsmsRounded";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
     <>
       <div
         ref={menuBlock}
-        className="fixed top-5 right-5 bg-white w-14 h-14 shadow-lg z-40 rounded-full bg-opacity-50"
+        className="fixed top-5 right-5 bg-gray-500 w-14 h-14 shadow-lg z-40 rounded-full bg-opacity-50"
       >
         {open ? (
           <button
@@ -46,15 +47,18 @@ const Navbar = () => {
 
         {/* Menu Open Block */}
         {open ? (
-          <div className="relative flex flex-col gap-4 mt-2 w-[60px] h-[250px] bg-white z-40 bg-opacity-50 rounded-2xl shadow-lg p-4">
-            <div>
+          <div className="relative flex flex-col justify-center items-center bg-gray-500 gap-4 mt-2 w-[56px] h-[210px] z-40 bg-opacity-50 rounded-2xl shadow-lg p-4">
+            <div className="mx-auto">
               <HomeRoundedIcon />
             </div>
-            <div>
+            <div className="mx-auto">
               <DataObjectRoundedIcon />
             </div>
-            <div>
+            <div className="mx-auto">
               <AssignmentRoundedIcon />
+            </div>
+            <div className="mx-auto">
+              <TextsmsRoundedIcon />
             </div>
           </div>
         ) : null}
