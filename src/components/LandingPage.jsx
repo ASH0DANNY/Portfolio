@@ -17,6 +17,7 @@ import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
 import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
 import TextsmsRoundedIcon from "@mui/icons-material/TextsmsRounded";
+import EastIcon from "@mui/icons-material/East";
 import CustomCursor from "../utils/customCursor";
 
 const Navbar = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
 
   return (
     <>
-    <CustomCursor/>
+      <CustomCursor />
       <div
         ref={menuBlock}
         className="fixed top-5 right-5 bg-gray-500 w-14 h-14 shadow-lg z-40 rounded-full bg-opacity-50"
@@ -120,15 +121,29 @@ const LandingPage = () => {
           <p className="text-xl text-center font-roboto text-purple-400">
             My Technical Skills
           </p>
-          <div className="flex flex-wrap justify-center items-center mt-1 p-[10px] md:p-20 space-x-3 md:space-x-12">
-            {TechnicalSkills.map((item, index) => (
-              <span
-                key={index}
-                className="p-2 md:p-3 my-4 bg-purple-200 rounded-2xl text-purple-700 text-[17px] md:text-xl font-bold shadow-md"
-              >
-                {item}
-              </span>
-            ))}
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="p-10 bg-gray-300">
+              <ul>
+                {TechnicalSkills.backend.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="p-10 bg-gray-300">
+              <ul>
+                {TechnicalSkills.frontend.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="p-10 bg-gray-300">
+              <ul>
+                {TechnicalSkills.core.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -157,8 +172,13 @@ const LandingPage = () => {
                 {item.tec_used.map((value) => value + " ")}
               </p>
               <p className="text-sm text-blue-400" dir="rtl">
-                <Link to={`//${item.project_link}`} target="_blank">
-                  {item.project_link}
+                <Link
+                  to={`//${item.project_link}`}
+                  target="_blank"
+                  className="hover:underline"
+                >
+                  <EastIcon />
+                  View Project
                 </Link>
               </p>
             </div>
@@ -179,12 +199,14 @@ const LandingPage = () => {
                 {item.media_name}
               </p>
               <p className="text-sm text-center">{item.meda_data}</p>
-              <Link
-                onClick={item.media_link}
-                className="text-sm text-center text-blue-500 hover:underline"
-              >
-                {item.media_name} now
-              </Link>
+              <p dir="rtl">
+                <Link
+                  onClick={item.media_link}
+                  className="text-sm text-center text-blue-500 hover:underline"
+                >
+                  <EastIcon /> {item.media_name} now
+                </Link>
+              </p>
             </div>
           ))}
         </div>

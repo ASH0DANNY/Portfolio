@@ -29,18 +29,11 @@ export const handleCallClick = () => {
 };
 
 //Technical Language Skills (Known)
-export const TechnicalSkills = [
-  "React JS",
-  "Node JS",
-  "Python",
-  "Java",
-  "C++",
-  "Mongo DB",
-  "Firebase",
-  "Tailwind CSS",
-  "MySQL",
-  "PHP",
-];
+export const TechnicalSkills = {
+  frontend: ["React JS", "Tailwind CSS", "HTML", "Material UI"],
+  backend: ["Node JS", "Mongo DB", "Firebase"],
+  core: ["C++", "Java", "Python", "PHP"],
+};
 
 //Developed Projects Data
 export const projects = [
