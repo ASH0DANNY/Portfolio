@@ -1,3 +1,34 @@
+// Define your email and subject/message
+const email = "ash22714497@gmail.com";
+const subject = "Subject of the email";
+const body = "Hello, I need help with the following:";
+
+// Create the mailto link with the encoded subject and body
+const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+  subject
+)}&body=${encodeURIComponent(body)}`;
+
+export const handleSendMailClick = () => {
+  // Open the default email client with the pre-filled email
+  window.location.href = mailtoLink;
+};
+
+//WhatsApp Function
+const phoneNumber= "+917633839142";
+const whatsappURL = `wa.me/${phoneNumber}?text=Hello%20I%20need%20help!`;
+export const handleWhatsappClick = () => {
+  window.open(`//${whatsappURL}`, "_blank");
+};
+
+
+//Call Function
+// Define the phone number to call
+const telLink = `tel:${phoneNumber}`;
+
+export const handleCallClick = () => {
+  window.location.href = telLink;
+};
+
 //Technical Language Skills (Known)
 export const TechnicalSkills = [
   "React JS",
@@ -47,20 +78,21 @@ export const projects = [
 export const contactInfo = [
   {
     key: 1,
+    icon: "WhatsAppIcon",
     media_name: "WhatsApp",
-    meda_data: "+91 927366990",
-    media_link: "www.instagram.com",
+    meda_data: phoneNumber,
+    media_link: handleWhatsappClick,
   },
   {
     key: 2,
     media_name: "Email",
-    meda_data: "example@example.com",
-    media_link: "www.instagram.com",
+    meda_data: "as22714497@gmail.com",
+    media_link: handleSendMailClick,
   },
   {
     key: 3,
     media_name: "Phone",
-    meda_data: "+91 927366990",
-    media_link: "www.instagram.com",
+    meda_data: phoneNumber,
+    media_link: handleCallClick,
   },
 ];

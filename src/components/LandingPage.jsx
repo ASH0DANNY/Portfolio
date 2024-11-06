@@ -3,7 +3,6 @@ import Footer from "./Footer";
 import profile_image from "../images/profile.jpg";
 import { Link } from "react-router-dom";
 import { contactInfo, projects, TechnicalSkills } from "../data/PortfolioData";
-import { Button } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
@@ -85,11 +84,11 @@ const LandingPage = () => {
           <p className="text-purple-500 text-3xl mt-5">Left Description</p>
         </div>
         <div className="w-full md:w-1/2 mt-5 md:mt-0 h-[280px] md:h-full bg-purple-100 rounded-xl p-9 md:p-10 flex items-center justify-center shadow-lg">
-          <div className="w-[181px] md:w-[270px] h-[181px] md:h-[270px] rounded-2xl bg-purple-200 shadow-purple-700 shadow-2xl">
+          <div className="w-[181px] md:w-[270px] h-[181px] md:h-[270px] rounded-2xl bg-purple-200 shadow-purple-700 shadow-2xl rotate-12">
             <img
               src={profile_image}
               alt="profile_image"
-              className="inset-0 h-full w-full rounded-2xl object-cover"
+              className="inset-0 h-full w-full rounded-2xl object-cover -rotate-12"
             />
           </div>
         </div>
@@ -99,8 +98,8 @@ const LandingPage = () => {
         className="w-full h-auto md:px-10 py-14 md:py-14 flex justify-center items-center"
       >
         <div className="w-[95%] bg-purple-100 rounded-xl py-5 md:p-10">
-          <p className="text-4xl text-center text-purple-600 font-bold">
-            Technical Skills
+          <p className="text-4xl text-center font-knewave text-purple-600">
+            Technical Skills 🛠️
           </p>
           <div className="flex flex-wrap justify-center items-center mt-1 p-[10px] md:p-20 space-x-3 md:space-x-12">
             {TechnicalSkills.map((item, index) => (
@@ -119,8 +118,8 @@ const LandingPage = () => {
         id="projectSection"
         className="w-full bg-purple-950 px-5 md:px-10 py-10 md:py-14"
       >
-        <p className="text-3xl text-center text-purple-50 font-bold">
-          Projects Developed
+        <p className="text-3xl text-center font-knewave text-purple-50">
+          Projects Developed 📂
         </p>
         <div className="mt-7 md:mt-10 w-full flex flex-wrap justify-center items-center gap-8">
           {projects.map((item) => (
@@ -148,42 +147,42 @@ const LandingPage = () => {
         id="contactSection"
         className="w-full md:flex justify-center items-center my-11 md:my-16 p-3 md:p-12"
       >
-        <div className="flex flex-col flex-wrap gap-3 w-full md:w-1/2 justify-center items-center">
+        <div className="flex flex-col flex-wrap gap-3 w-full md:w-2/5 justify-center items-center">
           {contactInfo.map((item) => (
             <div
               key={item.key}
-              className="bg-purple-50 hover:bg-purple-200 shadow-md hover:shadow-lg p-7 rounded-lg"
+              className="bg-purple-50 w-1/2 hover:bg-purple-200 shadow-md hover:shadow-lg p-7 rounded-lg"
             >
               <p className="text-base text-center font-bold">
                 {item.media_name}
               </p>
               <p className="text-sm text-center">{item.meda_data}</p>
-              <p className="text-sm text-center">{item.media_link}</p>
+              <Link
+                onClick={item.media_link}
+                className="text-sm text-center text-blue-500 hover:underline"
+              >
+                {item.media_name} now
+              </Link>
             </div>
           ))}
         </div>
-        <div className="w-full md:w-1/2 flex flex-col flex-wrap gap-3 justify-center items-center shadow-xl py-9 px-5">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name.."
-            className="outline-blue-400 p-2 my-3 w-full md:w-1/2 border-2 border-blue-400 rounded-md"
-          />
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Your email.."
-            className="outline-blue-400 p-2 my-3 w-full md:w-1/2 border-2 border-blue-400 rounded-md"
-          />
-          <textarea
-            name="comment"
-            id="comment"
-            placeholder="Your comment.."
-            className="outline-blue-400 p-2 my-3 w-full md:w-1/2 border-2 border-blue-400 rounded-md"
-          />
-          <Button variant="contained">SUBMIT</Button>
+        <div className="w-full md:w-3/5 shadow-xl py-6 px-3 md:py-20 md:px-10 bg-purple-200">
+          <p className="text-3xl font-bold text-center">
+            Let's Build Something Amazing Together 🚀
+          </p>
+          <div className="w-3/4 mr-auto ml-auto mt-10">
+            <p className="text-lg mt-3 ">
+              Whether you have a project in mind, want to collaborate, or simply
+              want to chat about tech, I’d love to hear from you! I’m always
+              excited to connect with like-minded individuals and creative
+              problem-solvers.
+            </p>
+
+            <p className="text-lg mt-7">
+              Feel free to drop me a message, and let's turn ideas into reality!
+              💬
+            </p>
+          </div>
         </div>
       </div>
       <Footer />
