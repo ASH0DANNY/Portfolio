@@ -21,13 +21,13 @@ const CustomCursor = () => {
 
   return (
     <div
-      className="fixed -top-5 -left-5 z-50 pointer-events-none bg-transparent"
+      className="fixed -top-4 -left-4 z-50 pointer-events-none bg-transparent"
       style={{
         transform: `translate(${cursorPosition.x}px, ${cursorPosition.y}px)`,
         transition: "transform 0.1s ease",
       }}
     >
-      <div className="w-10 h-10 bg-gray-400 bg-opacity-60 rounded-full cursor-pointer"></div>
+      <div className="w-10 h-10 bg-gray-400 bg-opacity-50 rounded-full cursor-pointer"></div>
     </div>
   );
 };
