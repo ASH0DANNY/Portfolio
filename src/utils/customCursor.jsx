@@ -27,7 +27,7 @@ const CustomCursor = () => {
         transition: "transform 0.1s ease",
       }}
     >
-      <div className="w-10 h-10 bg-gray-600 bg-opacity-60 rounded-full cursor-pointer"></div>
+      <div className="w-10 h-10 bg-gray-400 bg-opacity-60 rounded-full cursor-pointer"></div>
     </div>
   );
 };
