@@ -14,12 +14,11 @@ export const handleSendMailClick = () => {
 };
 
 //WhatsApp Function
-const phoneNumber= "+917633839142";
+const phoneNumber = "+917633839142";
 const whatsappURL = `wa.me/${phoneNumber}?text=Hello%20I%20need%20help!`;
 export const handleWhatsappClick = () => {
   window.open(`//${whatsappURL}`, "_blank");
 };
-
 
 //Call Function
 // Define the phone number to call
@@ -96,3 +95,10 @@ export const contactInfo = [
     media_link: handleCallClick,
   },
 ];
+
+//Introduction for Landing page
+export const introGreeting = "Hey! my name is";
+export const yourName = "Ashish Kumar";
+export const yourRole = "Sofware Developer";
+export const subIntroduction =
+  "I build intuitive, scalable software solutions that turn ideas into seamless, user-friendly digital experiences. Let's create together!";

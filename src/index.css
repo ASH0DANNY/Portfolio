@@ -19,3 +19,9 @@ code {
 html {
   scroll-behavior: smooth;
 }
+
+
+* {
+  cursor: url('./images/cursor.svg'), auto;
+}
+

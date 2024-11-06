@@ -11,6 +11,7 @@ module.exports = {
         roboto: ["Roboto", "sans-serif"],
         itim: ["Itim", "sans-serif"],
         knewave: ["knewave", "sans-serif"],
+        JetBrainsMono: ["JetBrains Mono", "sans-serif"],
       },
     },
   },

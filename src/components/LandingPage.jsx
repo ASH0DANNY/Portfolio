@@ -2,13 +2,22 @@ import React, { useRef, useState } from "react";
 import Footer from "./Footer";
 import profile_image from "../images/profile.jpg";
 import { Link } from "react-router-dom";
-import { contactInfo, projects, TechnicalSkills } from "../data/PortfolioData";
+import {
+  contactInfo,
+  introGreeting,
+  projects,
+  subIntroduction,
+  TechnicalSkills,
+  yourName,
+  yourRole,
+} from "../data/PortfolioData";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
 import AssignmentRoundedIcon from "@mui/icons-material/AssignmentRounded";
 import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
 import TextsmsRoundedIcon from "@mui/icons-material/TextsmsRounded";
+import CustomCursor from "../utils/customCursor";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -27,6 +36,7 @@ const Navbar = () => {
 
   return (
     <>
+    <CustomCursor/>
       <div
         ref={menuBlock}
         className="fixed top-5 right-5 bg-gray-500 w-14 h-14 shadow-lg z-40 rounded-full bg-opacity-50"
@@ -77,11 +87,17 @@ const LandingPage = () => {
       <Navbar />
       <div
         id="homeSection"
-        className="md:flex md:items-center md:justify-center w-full h-dvh p-6 md:p-16 bg-slate-200 gap-3"
+        className="md:flex md:items-center md:justify-center w-full h-dvh p-6 md:p-16 bg-slate-200 gap-3 "
       >
         <div className="w-full md:w-1/2 h-[320px] md:h-full bg-white rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
-          <p className="text-purple-700 text-5xl font-bold">Left Heading</p>
-          <p className="text-purple-500 text-3xl mt-5">Left Description</p>
+          <p className="text-gray-400 text-sm md:text-base">{introGreeting}</p>
+          <p className="text-purple-700 text-3xl md:text-5xl mt-1 font-roboto font-bold">
+            {yourName}
+          </p>
+          <p className="text-gray-500 text-xl md:text-xl mt-1">{yourRole}</p>
+          <p className="text-purple-500 font-JetBrainsMono text-base mt-3 md:mt-5">
+            {subIntroduction}
+          </p>
         </div>
         <div className="w-full md:w-1/2 mt-5 md:mt-0 h-[280px] md:h-full bg-purple-100 rounded-xl p-9 md:p-10 flex items-center justify-center shadow-lg">
           <div className="w-[181px] md:w-[270px] h-[181px] md:h-[270px] rounded-2xl bg-purple-200 shadow-purple-700 shadow-2xl rotate-12">
@@ -99,7 +115,10 @@ const LandingPage = () => {
       >
         <div className="w-[95%] bg-purple-100 rounded-xl py-5 md:p-10">
           <p className="text-4xl text-center font-knewave text-purple-600">
-            Technical Skills 🛠️
+            From Concept to Code 🛠️
+          </p>
+          <p className="text-xl text-center font-roboto text-purple-400">
+            My Technical Skills
           </p>
           <div className="flex flex-wrap justify-center items-center mt-1 p-[10px] md:p-20 space-x-3 md:space-x-12">
             {TechnicalSkills.map((item, index) => (
@@ -119,13 +138,16 @@ const LandingPage = () => {
         className="w-full bg-purple-950 px-5 md:px-10 py-10 md:py-14"
       >
         <p className="text-3xl text-center font-knewave text-purple-50">
-          Projects Developed 📂
+          The Projects That Define Me 📂
+        </p>
+        <p className="text-xl text-center font-roboto text-purple-400">
+          My Projects
         </p>
         <div className="mt-7 md:mt-10 w-full flex flex-wrap justify-center items-center gap-8">
           {projects.map((item) => (
             <div
               key={item.key}
-              className="bg-purple-800 hover:bg-purple-700 hover:shadow-lg p-7 rounded-lg"
+              className="bg-purple-800 hover:bg-purple-700 hover:shadow-lg mt-5 md:mt-10 p-7 rounded-lg"
             >
               <p className="text-2xl text-purple-100 font-bold mb-4">
                 {item.heading}
