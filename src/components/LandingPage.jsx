@@ -24,6 +24,7 @@ import CustomCursor from "../utils/customCursor";
 import MonitorIcon from "@mui/icons-material/Monitor";
 import StorageIcon from "@mui/icons-material/Storage";
 import DataObjectIcon from "@mui/icons-material/DataObject";
+import PersonIcon from "@mui/icons-material/Person";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -70,6 +71,9 @@ const Navbar = () => {
           <div className="relative flex flex-col justify-center items-center bg-gray-500 gap-4 mt-2 w-[56px] h-auto z-40 bg-opacity-50 rounded-2xl shadow-lg p-4">
             <a href="#homeSection" className="mx-auto">
               <HomeRoundedIcon />
+            </a>
+            <a href="#aboutmeSection" className="mx-auto">
+              <PersonIcon />
             </a>
             <a href="#tecSkillsSection" className="mx-auto hover:text-white">
               <DataObjectRoundedIcon />
@@ -129,7 +133,10 @@ const LandingPage = () => {
       </div>
 
       {/* About ME Section */}
-      <div className="w-full py-10 md:py-16 px-10 bg-purple-950">
+      <div
+        id="aboutmeSection"
+        className="w-full py-10 md:py-16 px-10 bg-purple-950"
+      >
         <div>
           <p className="text-2xl md:text-3xl text-center font-knewave text-purple-50">
             Some Lines 👋
@@ -150,9 +157,9 @@ const LandingPage = () => {
                 key={item.key}
                 className="bg-purple-800 hover:bg-purple-700 p-3 w-full text-purple-200 rounded-lg"
               >
-                <p className="text-lg text-purple-100 font-bold underline">
+                <span className="text-lg text-purple-100 font-bold underline">
                   {item.degreeName}
-                </p>
+                </span>{item.emoji}
                 <p className="text-sm text-purple-100 pt-3">{item.insName}</p>
                 <p className="text-sm text-blue-400 pt-1">{item.duaration}</p>
               </div>

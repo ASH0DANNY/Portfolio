@@ -24,7 +24,7 @@ const Footer = () => {
 
   const navLinks = [
     { name: "Home", link: "#homeSection" },
-    { name: "About", link: "#" },
+    { name: "About", link: "#aboutmeSection" },
     { name: "Skills", link: "#tecSkillsSection" },
     { name: "Projects", link: "#projectSection" },
     { name: "Contact", link: "#contactSection" },
@@ -45,7 +45,6 @@ const Footer = () => {
                     to={`//${item.link}`}
                     key={index}
                     target="_blank"
-                    
                     className="text-gray-500 hover:text-gray-700 mx-2"
                   >
                     {<item.name />}

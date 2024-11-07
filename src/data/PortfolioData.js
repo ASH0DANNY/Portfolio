@@ -109,19 +109,29 @@ export const aboutParagraph =
 export const QualificationData = [
   {
     key: "1",
-    degreeName: "Under Gradustion",
-    insName: "St. Xavier's College Ranchi",
-    duaration: "2020 - 2024",
+    degreeName: "Post Graduation",
+    emoji: "📚",
+    insName: "Marwari College Ranchi",
+    duaration: "persuaing",
   },
   {
     key: "2",
+    degreeName: "Under Graduation",
+    emoji: "🏆",
+    insName: "St. Xavier's College Ranchi",
+    duaration: "2020 - 2023",
+  },
+  {
+    key: "3",
     degreeName: "Intermediate (12th)",
+    emoji: "💡",
     insName: "DAV Kapildev Public School Ranchi",
     duaration: "2019 - 2020",
   },
   {
-    key: "3",
+    key: "4",
     degreeName: "Matriculate (10th)",
+    emoji: "🌱",
     insName: "DAV Kapildev Public School Ranchi",
     duaration: "2017 - 2018",
   },
