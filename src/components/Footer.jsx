@@ -12,6 +12,7 @@ import {
   handleSendMailClick,
   handleWhatsappClick,
 } from "../data/PortfolioData";
+import mylogo from "../images/mylogo.png";
 
 const Footer = () => {
   const socialLinks = [
@@ -34,9 +35,9 @@ const Footer = () => {
       <footer className="bg-black border-t border-gray-200">
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
+            <div className="col-span-2 md:col-span-2">
               <div className="flex items-center">
-                <img src="" alt="Logo" className="w-24 h-8" />
+                <img src={mylogo} alt="Logo" className="w-10 h-10" />
               </div>
               <div className="mt-4">
                 {socialLinks.map((item, index) => (
@@ -64,7 +65,7 @@ const Footer = () => {
             </div> */}
 
             <div className="col-span-1 md:col-span-1 lg:col-span-1">
-              <ul>
+              <ul className="ml-8 md:ml-auto">
                 {navLinks.map((item, index) => (
                   <a href={item.link}>
                     <li
@@ -79,7 +80,7 @@ const Footer = () => {
             </div>
 
             <div className="col-span-1 md:col-span-1 lg:col-span-1">
-              <ul>
+              <ul className="py-2 mr-8 md:mr-auto">
                 <Link
                   onClick={handleWhatsappClick}
                   target="_blank"

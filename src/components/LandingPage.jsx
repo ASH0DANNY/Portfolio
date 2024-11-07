@@ -19,6 +19,9 @@ import DataObjectRoundedIcon from "@mui/icons-material/DataObjectRounded";
 import TextsmsRoundedIcon from "@mui/icons-material/TextsmsRounded";
 import EastIcon from "@mui/icons-material/East";
 import CustomCursor from "../utils/customCursor";
+import MonitorIcon from "@mui/icons-material/Monitor";
+import StorageIcon from "@mui/icons-material/Storage";
+import DataObjectIcon from "@mui/icons-material/DataObject";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -88,18 +91,30 @@ const LandingPage = () => {
       <Navbar />
       <div
         id="homeSection"
-        className="md:flex md:items-center md:justify-center w-full h-dvh p-6 md:p-16 bg-slate-200 gap-3 "
+        className="md:flex md:items-center md:justify-center w-full h-dvh p-6 md:p-16 bg-slate-200  gap-3 "
+        // bg-gradient-to-r from-purple-800 via-purple-500 to-purple-200 glow-effect //for second effect
       >
         <div className="w-full md:w-1/2 h-[320px] md:h-full bg-white rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
-          <p className="text-gray-400 text-sm md:text-base">{introGreeting}</p>
+          <p className="text-gray-500 text-sm md:text-base">{introGreeting}</p>
           <p className="text-purple-700 text-3xl md:text-5xl mt-1 font-roboto font-bold">
             {yourName}
           </p>
-          <p className="text-gray-500 text-xl md:text-xl mt-1">{yourRole}</p>
-          <p className="text-purple-500 font-JetBrainsMono text-base mt-3 md:mt-5">
+          <p className="text-gray-700 text-xl md:text-xl mt-1">{yourRole}</p>
+          <p className="text-purple-500 font-JetBrainsMono text-base mt-4 md:mt-10">
             {subIntroduction}
           </p>
         </div>
+        {/* Second Effect */}
+        {/* <div className="w-full md:w-1/2 h-[320px] md:h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 glow-effect rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
+          <p className="text-gray-300 text-sm md:text-base">{introGreeting}</p>
+          <p className="text-purple-700 text-3xl md:text-5xl mt-1 font-roboto font-bold">
+            {yourName}
+          </p>
+          <p className="text-gray-800 text-xl md:text-xl mt-1">{yourRole}</p>
+          <p className="text-purple-100 font-JetBrainsMono text-base mt-3 md:mt-5">
+            {subIntroduction}
+          </p>
+        </div> */}
         <div className="w-full md:w-1/2 mt-5 md:mt-0 h-[280px] md:h-full bg-purple-100 rounded-xl p-9 md:p-10 flex items-center justify-center shadow-lg">
           <div className="w-[181px] md:w-[270px] h-[181px] md:h-[270px] rounded-2xl bg-purple-200 shadow-purple-700 shadow-2xl rotate-12">
             <img
@@ -122,25 +137,49 @@ const LandingPage = () => {
             My Technical Skills
           </p>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="p-10 bg-gray-300">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 justify-items-center gap-5">
+            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-300 rounded-lg flex flex-wrap items-center justify-center">
+              <div className="w-full my-2 flex flex-wrap items-center justify-center hover:text-white">
+                <MonitorIcon />
+              </div>
               <ul>
                 {TechnicalSkills.backend.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li
+                    key={item}
+                    className="group/item hover:bg-slate-100 px-3 rounded-lg py-2"
+                  >
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
-            <div className="p-10 bg-gray-300">
+            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-300 rounded-lg flex flex-wrap items-center justify-center">
+              <div className="w-full my-2 flex flex-wrap items-center justify-center hover:text-white">
+                <StorageIcon />
+              </div>
               <ul>
                 {TechnicalSkills.frontend.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li
+                    key={item}
+                    className="group/item hover:bg-slate-100 px-3 rounded-lg py-2"
+                  >
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
-            <div className="p-10 bg-gray-300">
+            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-200 rounded-lg flex flex-wrap items-center justify-center">
+              <div className="w-full my-2 flex flex-wrap items-center justify-center hover:text-white">
+                <DataObjectIcon />
+              </div>
               <ul>
                 {TechnicalSkills.core.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li
+                    key={item}
+                    className="group/item hover:bg-slate-100 px-3 rounded-lg py-2"
+                  >
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -210,7 +249,7 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-        <div className="w-full md:w-3/5 shadow-xl py-6 px-3 md:py-20 md:px-10 bg-purple-200">
+        <div className="w-full my-14 md:w-3/5 md:my-5 shadow-xl py-6 px-3 md:py-20 md:px-10 bg-purple-200">
           <p className="text-3xl font-bold text-center">
             Let's Build Something Amazing Together 🚀
           </p>
