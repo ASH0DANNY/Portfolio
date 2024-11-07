@@ -130,10 +130,10 @@ const LandingPage = () => {
         className="w-full h-auto md:px-10 py-14 md:py-14 flex justify-center items-center"
       >
         <div className="w-[95%] bg-purple-100 rounded-xl py-5 md:p-10">
-          <p className="text-4xl text-center font-knewave text-purple-600">
+          <p className="text-2xl md:text-3xl text-center font-knewave text-purple-600">
             From Concept to Code 🛠️
           </p>
-          <p className="text-xl text-center font-roboto text-purple-400">
+          <p className="text-lg md:text-xl text-center font-roboto text-purple-400">
             My Technical Skills
           </p>
 
@@ -191,10 +191,10 @@ const LandingPage = () => {
         id="projectSection"
         className="w-full bg-purple-950 px-5 md:px-10 py-10 md:py-14"
       >
-        <p className="text-3xl text-center font-knewave text-purple-50">
+        <p className="text-2xl md:text-3xl text-center font-knewave text-purple-50">
           The Projects That Define Me 📂
         </p>
-        <p className="text-xl text-center font-roboto text-purple-400">
+        <p className="text-lg md:text-xl text-center font-roboto text-purple-400">
           My Projects
         </p>
         <div className="mt-7 md:mt-10 w-full flex flex-wrap justify-center items-center gap-8">
@@ -232,9 +232,10 @@ const LandingPage = () => {
           {contactInfo.map((item) => (
             <div
               key={item.key}
-              className="bg-purple-50 w-1/2 hover:bg-purple-200 shadow-md hover:shadow-lg p-7 rounded-lg"
+              className="bg-purple-950 text-purple-100 w-[60%] md:w-1/2 my-2 hover:bg-purple-900 hover:border-white shadow-md hover:shadow-lg p-5 md:p-7 rounded-lg"
             >
               <p className="text-base text-center font-bold">
+                <item.icon className="mx-2"/>
                 {item.media_name}
               </p>
               <p className="text-sm text-center">{item.meda_data}</p>
@@ -249,19 +250,19 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-        <div className="w-full my-14 md:w-3/5 md:my-5 shadow-xl py-6 px-3 md:py-20 md:px-10 bg-purple-200">
-          <p className="text-3xl font-bold text-center">
+        <div className="w-full my-14 md:w-3/5 md:my-5 shadow-xl rounded-lg py-6 px-3 md:py-20 md:px-10 bg-purple-200">
+          <p className="text-2xl md:text-3xl font-bold text-center">
             Let's Build Something Amazing Together 🚀
           </p>
           <div className="w-3/4 mr-auto ml-auto mt-10">
-            <p className="text-lg mt-3 ">
+            <p className="text-base md:text-lg mt-3 ">
               Whether you have a project in mind, want to collaborate, or simply
               want to chat about tech, I’d love to hear from you! I’m always
               excited to connect with like-minded individuals and creative
               problem-solvers.
             </p>
 
-            <p className="text-lg mt-7">
+            <p className="text-base md:text-lg mt-7">
               Feel free to drop me a message, and let's turn ideas into reality!
               💬
             </p>

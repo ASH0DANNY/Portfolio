@@ -1,3 +1,7 @@
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import EmailIcon from '@mui/icons-material/Email';
+import CallIcon from '@mui/icons-material/Call';
+
 // Define your email and subject/message
 const email = "ash22714497@gmail.com";
 const subject = "Subject of the email";
@@ -70,19 +74,21 @@ export const projects = [
 export const contactInfo = [
   {
     key: 1,
-    icon: "WhatsAppIcon",
+    icon: WhatsAppIcon,
     media_name: "WhatsApp",
     meda_data: phoneNumber,
     media_link: handleWhatsappClick,
   },
   {
     key: 2,
+    icon: EmailIcon,
     media_name: "Email",
     meda_data: "as22714497@gmail.com",
     media_link: handleSendMailClick,
   },
   {
     key: 3,
+    icon: CallIcon,
     media_name: "Phone",
     meda_data: phoneNumber,
     media_link: handleCallClick,
