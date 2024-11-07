@@ -3,9 +3,11 @@ import Footer from "./Footer";
 import profile_image from "../images/profile.jpg";
 import { Link } from "react-router-dom";
 import {
+  aboutParagraph,
   contactInfo,
   introGreeting,
   projects,
+  QualificationData,
   subIntroduction,
   TechnicalSkills,
   yourName,
@@ -91,10 +93,10 @@ const LandingPage = () => {
       <Navbar />
       <div
         id="homeSection"
-        className="md:flex md:items-center md:justify-center w-full h-dvh p-6 md:p-16 bg-slate-200  gap-3 "
+        className="flex-col md:flex md:flex-wrap md:items-center md:justify-center w-full h-screen p-6 md:p-16 bg-slate-200 gap-3"
         // bg-gradient-to-r from-purple-800 via-purple-500 to-purple-200 glow-effect //for second effect
       >
-        <div className="w-full md:w-1/2 h-[320px] md:h-full bg-white rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
+        <div className="w-full md:w-1/2 md:h-full bg-white rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
           <p className="text-gray-500 text-sm md:text-base">{introGreeting}</p>
           <p className="text-purple-700 text-3xl md:text-5xl mt-1 font-roboto font-bold">
             {yourName}
@@ -125,6 +127,41 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+
+      {/* About ME Section */}
+      <div className="w-full py-10 md:py-16 px-10 bg-purple-950">
+        <div>
+          <p className="text-2xl md:text-3xl text-center font-knewave text-purple-50">
+            Some Lines 👋
+          </p>
+          <p className="text-lg md:text-xl text-center font-roboto text-purple-400">
+            About Me
+          </p>
+        </div>
+        <div className="mt-10 flex flex-wrap gap-7 justify-center items-center border-b-gray-300">
+          <div className="w-full md:w-[50%] h-full bg-purple-800 rounded-lg shadow-inner">
+            <p className="text-purple-200 text-base p-5 text-justifyp-5 rounded-lg shadow-inner">
+              {aboutParagraph}
+            </p>
+          </div>
+          <div className="mt-5 w-full md:w-[47%] rounded-lg shadow-inner grid grid-cols-2 justify-items-center gap-2">
+            {QualificationData.map((item) => (
+              <div
+                key={item.key}
+                className="bg-purple-800 hover:bg-purple-700 p-3 w-full text-purple-200 rounded-lg"
+              >
+                <p className="text-lg text-purple-100 font-bold underline">
+                  {item.degreeName}
+                </p>
+                <p className="text-sm text-purple-100 pt-3">{item.insName}</p>
+                <p className="text-sm text-blue-400 pt-1">{item.duaration}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Technical Skills Section */}
       <div
         id="tecSkillsSection"
         className="w-full h-auto md:px-10 py-14 md:py-14 flex justify-center items-center"
@@ -138,11 +175,11 @@ const LandingPage = () => {
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 justify-items-center gap-5">
-            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-300 rounded-lg flex flex-wrap items-center justify-center">
+            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-purple-300 rounded-lg flex flex-wrap items-center justify-center">
               <div className="w-full my-2 flex flex-wrap items-center justify-center hover:text-white">
                 <MonitorIcon />
               </div>
-              <ul>
+              <ul className="w-full">
                 {TechnicalSkills.backend.map((item) => (
                   <li
                     key={item}
@@ -153,11 +190,11 @@ const LandingPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-300 rounded-lg flex flex-wrap items-center justify-center">
+            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-purple-300 rounded-lg flex flex-wrap items-center justify-center">
               <div className="w-full my-2 flex flex-wrap items-center justify-center hover:text-white">
                 <StorageIcon />
               </div>
-              <ul>
+              <ul className="w-full">
                 {TechnicalSkills.frontend.map((item) => (
                   <li
                     key={item}
@@ -168,11 +205,11 @@ const LandingPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-300 rounded-lg flex flex-wrap items-center justify-center">
+            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-purple-300 rounded-lg flex flex-wrap items-center justify-center">
               <div className="w-full my-2 flex flex-wrap items-center justify-center hover:text-white">
                 <DataObjectIcon />
               </div>
-              <ul>
+              <ul className="w-full">
                 {TechnicalSkills.core.map((item) => (
                   <li
                     key={item}
@@ -197,18 +234,18 @@ const LandingPage = () => {
         <p className="text-lg md:text-xl text-center font-roboto text-purple-400">
           My Projects
         </p>
-        <div className="mt-7 md:mt-10 w-full flex flex-wrap justify-center items-center gap-8">
+        <div className="mt-7 md:mt-10 w-full grid grid-cols-1 md:grid-cols-3 justify-items-center gap-3">
           {projects.map((item) => (
             <div
               key={item.key}
               className="bg-purple-800 hover:bg-purple-700 hover:shadow-lg mt-5 md:mt-10 p-7 rounded-lg"
             >
-              <p className="text-2xl text-purple-100 font-bold mb-4">
+              <p className="text-[22px] text-purple-100 font-bold mb-4">
                 {item.heading}
               </p>
-              <p className="text-lg text-purple-300 mb-3">{item.desc}</p>
+              <p className="text-base text-purple-300 mb-3">{item.desc}</p>
               <p className="text-sm text-purple-400 mb-4">
-                {item.tec_used.map((value) => value + " ")}
+                {item.tec_used.map((value) => value + " , ")}
               </p>
               <p className="text-sm text-blue-400" dir="rtl">
                 <Link
@@ -235,11 +272,11 @@ const LandingPage = () => {
               className="bg-purple-950 text-purple-100 w-[60%] md:w-1/2 my-2 hover:bg-purple-900 hover:border-white shadow-md hover:shadow-lg p-5 md:p-7 rounded-lg"
             >
               <p className="text-base text-center font-bold">
-                <item.icon className="mx-2"/>
+                <item.icon className="mx-3" />
                 {item.media_name}
               </p>
-              <p className="text-sm text-center">{item.meda_data}</p>
-              <p dir="rtl">
+              <p className="text-sm text-center mt-3">{item.meda_data}</p>
+              <p dir="rtl" className="mt-2">
                 <Link
                   onClick={item.media_link}
                   className="text-sm text-center text-blue-500 hover:underline"

@@ -16,7 +16,7 @@ import mylogo from "../images/mylogo.png";
 
 const Footer = () => {
   const socialLinks = [
-    { name: GitHubIcon, link: "https://github.com/ASH0DANNY" },
+    { name: GitHubIcon, link: "github.com/ASH0DANNY" },
     { name: InstagramIcon, link: "www.instagram.com" },
     { name: FacebookIcon, link: "www.facebook.com" },
     { name: YouTubeIcon, link: "www.youtube.com" },
@@ -45,7 +45,7 @@ const Footer = () => {
                     to={`//${item.link}`}
                     key={index}
                     target="_blank"
-                    rel="noopener noreferrer" // Important for security
+                    
                     className="text-gray-500 hover:text-gray-700 mx-2"
                   >
                     {<item.name />}
