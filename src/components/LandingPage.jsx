@@ -100,7 +100,7 @@ const LandingPage = () => {
             {yourName}
           </p>
           <p className="text-gray-700 text-xl md:text-xl mt-1">{yourRole}</p>
-          <p className="text-purple-500 font-JetBrainsMono text-base mt-4 md:mt-10">
+          <p className="text-purple-500 font-JetBrainsMono text-sm md:text-base mt-8 md:mt-10">
             {subIntroduction}
           </p>
         </div>
@@ -168,7 +168,7 @@ const LandingPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-200 rounded-lg flex flex-wrap items-center justify-center">
+            <div className="w-2/3 md:w-auto p-6 md:p-10 bg-gray-300 rounded-lg flex flex-wrap items-center justify-center">
               <div className="w-full my-2 flex flex-wrap items-center justify-center hover:text-white">
                 <DataObjectIcon />
               </div>
