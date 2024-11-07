@@ -137,7 +137,7 @@ const LandingPage = () => {
       {/* About ME Section */}
       <div
         id="aboutmeSection"
-        className="w-full py-10 md:pt-16 md:pb-20 px-10 bg-purple-950"
+        className="w-full pt-12 md:pt-16 pb-20 px-10 bg-purple-950"
       >
         <div>
           <p className="text-2xl md:text-3xl text-center font-knewave text-purple-50">
