@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import {
   aboutParagraph,
   contactInfo,
+  CVDriveLink,
   introGreeting,
   projects,
   QualificationData,
@@ -25,6 +26,7 @@ import MonitorIcon from "@mui/icons-material/Monitor";
 import StorageIcon from "@mui/icons-material/Storage";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import PersonIcon from "@mui/icons-material/Person";
+import { Button } from "@mui/material";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -135,7 +137,7 @@ const LandingPage = () => {
       {/* About ME Section */}
       <div
         id="aboutmeSection"
-        className="w-full py-10 md:py-16 px-10 bg-purple-950"
+        className="w-full py-10 md:pt-16 md:pb-20 px-10 bg-purple-950"
       >
         <div>
           <p className="text-2xl md:text-3xl text-center font-knewave text-purple-50">
@@ -159,7 +161,8 @@ const LandingPage = () => {
               >
                 <span className="text-lg text-purple-100 font-bold underline">
                   {item.degreeName}
-                </span>{item.emoji}
+                </span>
+                {item.emoji}
                 <p className="text-sm text-purple-100 pt-3">{item.insName}</p>
                 <p className="text-sm text-blue-400 pt-1">{item.duaration}</p>
               </div>
@@ -294,7 +297,7 @@ const LandingPage = () => {
             </div>
           ))}
         </div>
-        <div className="w-full my-14 md:w-3/5 md:my-5 shadow-xl rounded-lg py-6 px-3 md:py-20 md:px-10 bg-purple-200">
+        <div className="w-full my-14 md:w-3/5 md:my-5 shadow-xl rounded-lg py-6 px-3 md:py-16 md:px-10 bg-purple-200">
           <p className="text-2xl md:text-3xl font-bold text-center">
             Let's Build Something Amazing Together 🚀
           </p>
@@ -310,6 +313,14 @@ const LandingPage = () => {
               Feel free to drop me a message, and let's turn ideas into reality!
               💬
             </p>
+          </div>
+          <div className="w-full p-5 flex justify-center items-center">
+            <Button
+              variant="contained"
+              onClick={() => window.open(CVDriveLink, "_blank")}
+            >
+              View CV
+            </Button>
           </div>
         </div>
       </div>
