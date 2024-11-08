@@ -115,7 +115,7 @@ export const QualificationData = [
     degreeName: "Post Graduation",
     emoji: "📚",
     insName: "Marwari College Ranchi",
-    duaration: "persuaing",
+    duaration: "Persuaing",
   },
   {
     key: "2",

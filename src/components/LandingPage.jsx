@@ -147,13 +147,25 @@ const LandingPage = () => {
             About Me
           </p>
         </div>
+        <div className="w-full mt-5 p-2 flex justify-center items-center gap-10">
+          <Button
+            variant="contained"
+            onClick={() => window.open(CVDriveLink, "_blank")}
+          >
+            View CV
+          </Button>
+          <a href="#contactSection" >
+            <Button variant="contained">Contact Me</Button>
+          </a>
+        </div>
         <div className="mt-10 flex flex-wrap gap-7 justify-center items-center border-b-gray-300">
           <div className="w-full md:w-[50%] h-full bg-purple-800 rounded-lg shadow-inner">
             <p className="text-purple-200 text-base p-5 text-justifyp-5 rounded-lg shadow-inner">
               {aboutParagraph}
             </p>
           </div>
-          <div className="mt-5 w-full md:w-[47%] rounded-lg shadow-inner grid grid-cols-2 justify-items-center gap-2">
+
+          <div className="mt-3 w-full md:w-[47%] rounded-lg shadow-inner grid grid-cols-2 justify-items-center gap-2">
             {QualificationData.map((item) => (
               <div
                 key={item.key}
@@ -313,14 +325,6 @@ const LandingPage = () => {
               Feel free to drop me a message, and let's turn ideas into reality!
               💬
             </p>
-          </div>
-          <div className="w-full p-5 flex justify-center items-center">
-            <Button
-              variant="contained"
-              onClick={() => window.open(CVDriveLink, "_blank")}
-            >
-              View CV
-            </Button>
           </div>
         </div>
       </div>
