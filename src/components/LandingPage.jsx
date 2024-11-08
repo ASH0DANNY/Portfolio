@@ -7,7 +7,6 @@ import {
   contactInfo,
   CVDriveLink,
   introGreeting,
-  projects,
   QualificationData,
   subIntroduction,
   TechnicalSkills,
@@ -27,6 +26,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import PersonIcon from "@mui/icons-material/Person";
 import { Button } from "@mui/material";
+import GetProjects from "./GetProjects";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -154,7 +154,7 @@ const LandingPage = () => {
           >
             View CV
           </Button>
-          <a href="#contactSection" >
+          <a href="#contactSection">
             <Button variant="contained">Contact Me</Button>
           </a>
         </div>
@@ -257,30 +257,7 @@ const LandingPage = () => {
           My Projects
         </p>
         <div className="mt-7 md:mt-10 w-full grid grid-cols-1 md:grid-cols-3 justify-items-center gap-3">
-          {projects.map((item) => (
-            <div
-              key={item.key}
-              className="bg-purple-800 hover:bg-purple-700 hover:shadow-lg mt-5 md:mt-10 p-7 rounded-lg"
-            >
-              <p className="text-[22px] text-purple-100 font-bold mb-4">
-                {item.heading}
-              </p>
-              <p className="text-base text-purple-300 mb-3">{item.desc}</p>
-              <p className="text-sm text-purple-400 mb-4">
-                {item.tec_used.map((value) => value + " , ")}
-              </p>
-              <p className="text-sm text-blue-400" dir="rtl">
-                <Link
-                  to={`//${item.project_link}`}
-                  target="_blank"
-                  className="hover:underline"
-                >
-                  <EastIcon />
-                  View Project
-                </Link>
-              </p>
-            </div>
-          ))}
+          <GetProjects />
         </div>
       </div>
       <div

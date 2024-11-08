@@ -40,36 +40,37 @@ export const TechnicalSkills = {
 };
 
 //Developed Projects Data
-export const projects = [
-  {
-    key: 1,
-    heading: "Car and Bike Rental",
-    desc: "A car and bike rental website simplifies booking, selection, and payment.",
-    tec_used: ["React JS", "Node JS"],
-    project_link: "#",
-  },
-  {
-    key: 2,
-    heading: "School ERP",
-    desc: "A School ERP system streamlines administration, management, communication.",
-    tec_used: ["React JS", "Node JS", "Express JS", "Firebase", "Material UI"],
-    project_link: "#",
-  },
-  {
-    key: 3,
-    heading: "Gift Ecommerce",
-    desc: "An eCommerce platform offering curated gifts for all occasions.",
-    tec_used: ["React JS", "Tailwind CSS", "Node JS", "Firebase"],
-    project_link: "#",
-  },
-  {
-    key: 4,
-    heading: "Portfolio",
-    desc: "A portfolio showcases skills, projects, and professional achievements.",
-    tec_used: ["React JS", "Tailwind CSS"],
-    project_link: "#",
-  },
-];
+// export const projects = [
+//   {
+//     key: 1,
+//     heading: "Car and Bike Rental",
+//     desc: "A car and bike rental website simplifies booking, selection, and payment.",
+//     tec_used: ["React JS", "Node JS"],
+//     project_link: "#",
+//   },
+//   {
+//     key: 2,
+//     heading: "School ERP",
+//     desc: "A School ERP system streamlines administration, management, communication.",
+//     tec_used: ["React JS", "Node JS", "Express JS", "Firebase", "Material UI"],
+//     project_link: "#",
+//   },
+//   {
+//     key: 3,
+//     heading: "Gift Ecommerce",
+//     desc: "An eCommerce platform offering curated gifts for all occasions.",
+//     tec_used: ["React JS", "Tailwind CSS", "Node JS", "Firebase"],
+//     project_link: "#",
+//   },
+//   {
+//     key: 4,
+//     heading: "Portfolio",
+//     desc: "A portfolio showcases skills, projects, and professional achievements.",
+//     tec_used: ["React JS", "Tailwind CSS"],
+//     project_link: "#",
+//   },
+// ];
+
 
 export const contactInfo = [
   {
