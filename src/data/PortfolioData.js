@@ -4,7 +4,7 @@ import CallIcon from "@mui/icons-material/Call";
 
 // Define your email and subject/message
 const email = "ash22714497@gmail.com";
-const subject = "Subject of the email";
+const subject = "Mail regarding help";
 const body = "Hello, I need help with the following:";
 
 // Create the mailto link with the encoded subject and body
@@ -97,11 +97,11 @@ export const contactInfo = [
 ];
 
 //Introduction for Landing page
-export const introGreeting = "Hey! my name is";
-export const yourName = "Ashish Kumar";
-export const yourRole = "Sofware Developer";
-export const subIntroduction =
-  "I build intuitive, scalable software solutions that turn ideas into seamless, user-friendly digital experiences. Let's create together!";
+// export const introGreeting = "Hey! my name is";
+// export const yourName = "Ashish Kumar";
+// export const yourRole = "Sofware Developer";
+// export const subIntroduction =
+//   "I build intuitive, scalable software solutions that turn ideas into seamless, user-friendly digital experiences. Let's create together!";
 
 //About Me
 export const CVDriveLink =

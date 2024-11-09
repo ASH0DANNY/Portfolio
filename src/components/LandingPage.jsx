@@ -6,12 +6,8 @@ import {
   aboutParagraph,
   contactInfo,
   CVDriveLink,
-  introGreeting,
   QualificationData,
-  subIntroduction,
   TechnicalSkills,
-  yourName,
-  yourRole,
 } from "../data/PortfolioData";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
@@ -27,6 +23,8 @@ import DataObjectIcon from "@mui/icons-material/DataObject";
 import PersonIcon from "@mui/icons-material/Person";
 import { Button } from "@mui/material";
 import GetProjects from "./GetProjects";
+import GetIntroData from "./GetIntroData";
+
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -94,24 +92,18 @@ const Navbar = () => {
 };
 
 const LandingPage = () => {
+  
   return (
     <>
       <Navbar />
+      
       <div
         id="homeSection"
         className="flex-col md:flex md:flex-wrap md:items-center md:justify-center w-full h-screen p-6 md:p-16 bg-slate-200 gap-3"
         // bg-gradient-to-r from-purple-800 via-purple-500 to-purple-200 glow-effect //for second effect
       >
-        <div className="w-full md:w-1/2 md:h-full bg-white rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
-          <p className="text-gray-500 text-sm md:text-base">{introGreeting}</p>
-          <p className="text-purple-700 text-3xl md:text-5xl mt-1 font-roboto font-bold">
-            {yourName}
-          </p>
-          <p className="text-gray-700 text-xl md:text-xl mt-1">{yourRole}</p>
-          <p className="text-purple-500 font-JetBrainsMono text-sm md:text-base mt-8 md:mt-10">
-            {subIntroduction}
-          </p>
-        </div>
+        <GetIntroData/>
+        
         {/* Second Effect */}
         {/* <div className="w-full md:w-1/2 h-[320px] md:h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 glow-effect rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
           <p className="text-gray-300 text-sm md:text-base">{introGreeting}</p>
