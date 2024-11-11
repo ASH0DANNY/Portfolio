@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import Footer from "./Footer";
-import profile_image from "../images/profile.jpg";
 import { Link } from "react-router-dom";
 import {
   aboutParagraph,
@@ -22,9 +21,11 @@ import StorageIcon from "@mui/icons-material/Storage";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 import PersonIcon from "@mui/icons-material/Person";
 import { Button } from "@mui/material";
+import Alert from "@mui/material/Alert";
 import GetProjects from "./GetProjects";
 import GetIntroData from "./GetIntroData";
-
+import { firestore } from "../firebase";
+import { addDoc, collection } from "@firebase/firestore";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -92,38 +93,54 @@ const Navbar = () => {
 };
 
 const LandingPage = () => {
-  
+  const [successAlert, setSuccessAlert] = useState(false);
+  const [warningAlert, setWarningAlert] = useState(false);
+  const [uName, setuName] = useState("");
+  const [uEmail, setuEmail] = useState("");
+  const [uComment, setuComment] = useState("");
+  const dataref = collection(firestore, "queries");
+
+  const handleSubmit = () => {
+    let formData = { name: "", email: "", comment: "" };
+    if (uName && uEmail && uComment !== "") {
+      formData = {
+        name: uName,
+        email: uEmail,
+        comment: uComment,
+      };
+      try {
+        addDoc(dataref, formData);
+        console.log("Data added");
+      } catch (e) {
+        console.log(e);
+      }
+
+      setSuccessAlert(true);
+      setTimeout(() => {
+        setSuccessAlert(false);
+
+        setuName("");
+        setuEmail("");
+        setuComment("");
+      }, 2000);
+    } else {
+      setWarningAlert(true);
+      setTimeout(() => {
+        setWarningAlert(false);
+      }, 2000);
+    }
+  };
+
   return (
     <>
       <Navbar />
-      
+
       <div
         id="homeSection"
         className="flex-col md:flex md:flex-wrap md:items-center md:justify-center w-full h-screen p-6 md:p-16 bg-slate-200 gap-3"
         // bg-gradient-to-r from-purple-800 via-purple-500 to-purple-200 glow-effect //for second effect
       >
-        <GetIntroData/>
-        
-        {/* Second Effect */}
-        {/* <div className="w-full md:w-1/2 h-[320px] md:h-full bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 glow-effect rounded-xl p-7 md:px-24 md:py-36 shadow-lg">
-          <p className="text-gray-300 text-sm md:text-base">{introGreeting}</p>
-          <p className="text-purple-700 text-3xl md:text-5xl mt-1 font-roboto font-bold">
-            {yourName}
-          </p>
-          <p className="text-gray-800 text-xl md:text-xl mt-1">{yourRole}</p>
-          <p className="text-purple-100 font-JetBrainsMono text-base mt-3 md:mt-5">
-            {subIntroduction}
-          </p>
-        </div> */}
-        <div className="w-full md:w-1/2 mt-5 md:mt-0 h-[280px] md:h-full bg-purple-100 rounded-xl p-9 md:p-10 flex items-center justify-center shadow-lg">
-          <div className="w-[181px] md:w-[270px] h-[181px] md:h-[270px] rounded-2xl bg-purple-200 shadow-purple-700 shadow-2xl rotate-12">
-            <img
-              src={profile_image}
-              alt="profile_image"
-              className="inset-0 h-full w-full rounded-2xl object-cover -rotate-12"
-            />
-          </div>
-        </div>
+        <GetIntroData />
       </div>
 
       {/* About ME Section */}
@@ -161,7 +178,7 @@ const LandingPage = () => {
             {QualificationData.map((item) => (
               <div
                 key={item.key}
-                className="bg-purple-800 hover:bg-purple-700 p-3 w-full text-purple-200 rounded-lg"
+                className="bg-purple-800 hover:bg-blue-600 p-3 w-full text-purple-200 rounded-lg"
               >
                 <span className="text-lg text-purple-100 font-bold underline">
                   {item.degreeName}
@@ -194,7 +211,7 @@ const LandingPage = () => {
                 <MonitorIcon />
               </div>
               <ul className="w-full">
-                {TechnicalSkills.backend.map((item) => (
+                {TechnicalSkills.frontend.map((item) => (
                   <li
                     key={item}
                     className="group/item hover:bg-slate-100 px-3 rounded-lg py-2"
@@ -209,7 +226,7 @@ const LandingPage = () => {
                 <StorageIcon />
               </div>
               <ul className="w-full">
-                {TechnicalSkills.frontend.map((item) => (
+                {TechnicalSkills.backend.map((item) => (
                   <li
                     key={item}
                     className="group/item hover:bg-slate-100 px-3 rounded-lg py-2"
@@ -283,12 +300,51 @@ const LandingPage = () => {
             Let's Build Something Amazing Together 🚀
           </p>
           <div className="w-3/4 mr-auto ml-auto mt-10">
-            <p className="text-base md:text-lg mt-3 ">
-              Whether you have a project in mind, want to collaborate, or simply
-              want to chat about tech, I’d love to hear from you! I’m always
-              excited to connect with like-minded individuals and creative
-              problem-solvers.
-            </p>
+            <form className="flex flex-col w-full">
+              <input
+                id="u_name"
+                type="text"
+                value={uName}
+                onChange={(e) => setuName(e.target.value)}
+                placeholder="Enter name.."
+                className="mt-1 mb-3 rounded-lg p-3 border border-gray-300 focus:outline-none focus:ring-2  focus:ring-purple-500"
+              />
+              <input
+                id="u_email"
+                type="email"
+                value={uEmail}
+                onChange={(e) => setuEmail(e.target.value)}
+                placeholder="Enter email.."
+                className="mt-1 mb-3 rounded-lg p-3 border border-gray-300 focus:outline-none focus:ring-2  focus:ring-purple-500"
+              />
+              <input
+                id="u_comment"
+                type="text"
+                value={uComment}
+                onChange={(e) => setuComment(e.target.value)}
+                placeholder="Your comment.."
+                className="mt-1 mb-8 rounded-lg p-3 border border-gray-300 focus:outline-none focus:ring-2  focus:ring-purple-500"
+              />
+              <Button
+                variant="outlined"
+                className="w-full lg:w-1/2 self-center"
+                onClick={handleSubmit}
+              >
+                Get Help
+              </Button>
+              <div className="h-10 w-full mt-1 items-center">
+                {successAlert ? (
+                  <Alert severity="success">Query Sent Successfully!!</Alert>
+                ) : (
+                  ""
+                )}
+                {warningAlert ? (
+                  <Alert severity="warning">All fields are mandatory!!</Alert>
+                ) : (
+                  ""
+                )}
+              </div>
+            </form>
 
             <p className="text-base md:text-lg mt-7">
               Feel free to drop me a message, and let's turn ideas into reality!

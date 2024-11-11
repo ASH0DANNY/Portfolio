@@ -71,7 +71,6 @@ export const TechnicalSkills = {
 //   },
 // ];
 
-
 export const contactInfo = [
   {
     key: 1,
@@ -108,7 +107,7 @@ export const CVDriveLink =
   "https://drive.google.com/file/d/1rQxdZYoJLVMQeZ8oHPpUDHj3wjxCCxgu/view?usp=drivesdk"; // Replace with your Google Drive file ID
 
 export const aboutParagraph =
-  "I'm a software developer with expertise in both frontend and backend technologies. I specialize in building scalable, efficient, and user-friendly applications. With a focus on clean code, performance optimization, and collaboration, I strive to deliver high-quality solutions that solve real-world problems. Let's create something impactful together!";
+  "I'm a software developer with expertise in both frontend and backend technologies. I specialize in building scalable, efficient, and user-friendly applications. With a focus on clean code, performance optimization, and collaboration, I strive to deliver high-quality solutions that solve real-world problems.";
 
 export const QualificationData = [
   {
