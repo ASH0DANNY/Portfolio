@@ -2,7 +2,7 @@ import React from "react";
 import { get, ref } from "firebase/database";
 import { database } from "../firebase";
 import { useEffect, useState } from "react";
-import local_ProfilePhoto from "../images/profile.jpg";
+import local_ProfilePhoto from "../images/myprofile.png";
 
 const GetIntroData = () => {
   const [introData, setIntroData] = useState([]);
