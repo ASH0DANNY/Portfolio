@@ -24,8 +24,8 @@ import { Button } from "@mui/material";
 import Alert from "@mui/material/Alert";
 import GetProjects from "./GetProjects";
 import GetIntroData from "./GetIntroData";
-import { firestore } from "../firebase";
-import { addDoc, collection } from "@firebase/firestore";
+import { db } from "../firebase";
+import { addDoc, collection } from "firebase/firestore";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -98,7 +98,7 @@ const LandingPage = () => {
   const [uName, setuName] = useState("");
   const [uEmail, setuEmail] = useState("");
   const [uComment, setuComment] = useState("");
-  const dataref = collection(firestore, "queries");
+  const dataref = collection(db, "queries");
 
   const handleSubmit = () => {
     let formData = { name: "", email: "", comment: "" };

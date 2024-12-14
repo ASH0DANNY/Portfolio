@@ -66,11 +66,8 @@ const Footer = () => {
             <div className="col-span-1 md:col-span-1 lg:col-span-1">
               <ul className="ml-8 md:ml-auto">
                 {navLinks.map((item, index) => (
-                  <a href={item.link}>
-                    <li
-                      key={index}
-                      className="text-gray-500 hover:text-gray-700"
-                    >
+                  <a href={item.link} key={index}>
+                    <li className="text-gray-500 hover:text-gray-700">
                       {item.name}
                     </li>
                   </a>

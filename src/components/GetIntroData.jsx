@@ -1,24 +1,26 @@
 import React from "react";
-import { get, ref } from "firebase/database";
-import { database } from "../firebase";
 import { useEffect, useState } from "react";
 import local_ProfilePhoto from "../images/myprofile.png";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const GetIntroData = () => {
   const [introData, setIntroData] = useState([]);
+
+  const getIntroData = async () => {
+    try {
+      const introReff = doc(db, "introduction", "introduction");
+      const temp = await getDoc(introReff);
+      if (temp.exists()) setIntroData(temp.data());
+      else {
+        console.log("No such data");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   useEffect(() => {
-    const userRef = ref(database, "introduction");
-    get(userRef)
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const projectsArray = snapshot.val();
-          setIntroData(projectsArray);
-        } else {
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    getIntroData();
   }, []);
   return (
     <>

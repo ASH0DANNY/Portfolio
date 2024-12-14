@@ -1,0 +1,54 @@
+{
+  "introduction": {
+    "introGreeting": "Hey! my name is",
+    "profilePhoto": "",
+    "subIntroduction": "I build intuitive, scalable software solutions that turn ideas into seamless, user-friendly digital experiences. Let's create together!",
+    "yourName": "Ashish Kumar",
+    "yourRole": "Software Developer"
+  },
+  "projects": [
+    null,
+    {
+      "desc": "A car and bike rental website simplifies booking, selection, and payment.",
+      "heading": "Car and Bike Rental",
+      "project_link": "#",
+      "tec_used": [
+        "React JS",
+        "Node JS",
+        "Firebase"
+      ]
+    },
+    {
+      "desc": "A School ERP system streamlines administration, management, communication.",
+      "heading": "School ERP",
+      "project_link": "orient-public-school-prod.web.app/",
+      "tec_used": [
+        "React JS",
+        "Node JS",
+        "Express JS",
+        "Firebase",
+        "Material UI"
+      ]
+    },
+    {
+      "desc": "An eCommerce platform offering curated gifts for all occasions.",
+      "heading": "Gift Ecommerce",
+      "project_link": "#",
+      "tec_used": [
+        "React JS",
+        "Tailwind CSS",
+        "Node JS",
+        "Firebase"
+      ]
+    },
+    {
+      "desc": "A portfolio showcases skills, projects, and professional achievements.",
+      "heading": "Portfolio",
+      "project_link": "ash0danny.github.io/Portfolio",
+      "tec_used": [
+        "React JS",
+        "Tailwind CSS"
+      ]
+    }
+  ]
+}

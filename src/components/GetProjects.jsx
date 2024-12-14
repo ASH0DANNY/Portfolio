@@ -1,32 +1,43 @@
 //Firebase Database declared above
-import { get, ref } from "firebase/database";
 import { useEffect, useState } from "react";
-import { database } from "../firebase";
-
 import React from "react";
 import EastIcon from "@mui/icons-material/East";
 import { Link } from "react-router-dom";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
 
 const GetProjects = () => {
   const [projects, setProjects] = useState([]);
+
+  const getProjectData = async () => {
+    try {
+      const productsRef = collection(db, "projects");
+      const temp = await getDocs(productsRef);
+      setProjects(temp.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    // getDoc(productRef)
+    //   .then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //       const projectsArray = Object.entries(snapshot.val()).map(
+    //         ([id, data]) => ({
+    //           id,
+    //           ...data,
+    //         })
+    //       );
+    //       setProjects(projectsArray);
+    //     } else {
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+    //   });
+  };
+
   useEffect(() => {
-    const userRef = ref(database, "projects");
-    get(userRef)
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const projectsArray = Object.entries(snapshot.val()).map(
-            ([id, data]) => ({
-              id,
-              ...data,
-            })
-          );
-          setProjects(projectsArray);
-        } else {
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    getProjectData();
   }, []);
 
   return (
